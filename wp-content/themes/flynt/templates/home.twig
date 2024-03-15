@@ -1,21 +1,32 @@
 {% extends 'templates/_document.twig' %}
 
 {% block content %}
-  <article>
 
-  
-    <header>
-     HEADER
+  <article>
+    
+    <header class="relative" style="background:hsla(317, 74%, 21%, 1);">
+      {# {{ renderComponent('BlockPostHeader', {post: post}) }} #}
+      <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player class="absolute" src="{{ theme.link }}/assets/flor.json" background="transparent" speed="1" style="width: 600px; height: 600px" direction="1" playMode="normal" loop autoplay>
+      </dotlottie-player>
+      <div data-size="medium" data-align="center" >
+        <h2 class="text-white">Netus ullamc elementum dolor Adipiscing aenean egestas</h2>
+      </div>
     </header>
 
-    {# <section class="wp-block-post-content has-global-padding is-layout-constrained">
-       {{ post.content }}
-    </section> #}
-    {# <footer>
-      {{ renderComponent('BlockPostFooter', {post: post}) }}
-    </footer> #}
-    {# <section>
-      {{ renderComponent('GridPostsLatest', {'taxonomies': post.categories(), 'options': {'theme': 'light', 'maxColumns': 3}}) }}
-    </section> #}
+    <section class="container componentSpacing">
+      <div data-size="medium" data-align="center">
+        HOLA
+      </div>
+    </section>
+
+    <section class="wp-block-post-content has-global-padding is-layout-constrained">
+       {# {{ post.content }} #}
+    </section>
+
+
+
+
   </article>
+
 {% endblock %}

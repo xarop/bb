@@ -9,6 +9,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 .paragraph {
   color: var(--color-text);
@@ -21,10 +25,7 @@ nav {
   font-family: var(--font-family-nav);
 }
 
-footer {
-  color: var(--color-background);
-  background-color:  var(--color-accent);
-}
+
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {

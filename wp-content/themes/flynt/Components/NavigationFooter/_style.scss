@@ -1,5 +1,7 @@
 flynt-component[name='NavigationFooter'] {
   font-size: var(--font-size-body-small);
+  color: var(--color-background);
+  background-color:  var(--color-accent);
 
   .container {
     padding-block: var(--component-spacing);
