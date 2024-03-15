@@ -40,6 +40,14 @@ function getACFLayout(): array
                 'required' => 1,
             ],
             [
+                'label' => __('Text', 'flynt'),
+                'name' => 'contentHtml',
+                'type' => 'wysiwyg',
+                'delay' => 0,
+                'media_upload' => 0,
+                'required' => 1,
+            ],
+            [
                 'label' => __('Video', 'flynt'),
                 'name' => 'oembed',
                 'type' => 'oembed',

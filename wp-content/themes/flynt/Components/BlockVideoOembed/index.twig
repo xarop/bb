@@ -1,5 +1,11 @@
 <flynt-component name="BlockVideoOembed" load:on="visible" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }}>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <dotlottie-player class="w-full h-full" src="{{ theme.link }}/assets/flor.json" background="transparent" speed="1" style="position:absolute; width: 600px; height: 600px" direction="1" playMode="normal" loop autoplay>
+  </dotlottie-player>
   <div class="container">
+    <div data-size="medium" data-align="center">
+      {{ contentHtml|e('wp_kses_post') }}
+    </div>
     <div class="video" data-size="{{ options.size }}" data-align="center">
       {% if posterImage %}
         {% include 'Partials/_figure.twig' ignore missing with {image: posterImage} only %}

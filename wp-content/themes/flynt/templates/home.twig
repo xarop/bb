@@ -3,6 +3,19 @@
 {% block content %}
 
   <article>
+
+  <header class="relative flex items-center justify-center h-screen" style="background-color: hsla(317, 74%, 21%, 1);">
+    <div class="absolute z-10 flex flex-col items-center justify-center">
+        <div data-size="medium" data-align="center">
+            <h2 class="text-white text-center">Netus ullamc elementum dolor Adipiscing aenean egestas</h2>
+        </div>
+    </div>
+    <div class="absolute inset-0 z-0">
+        <dotlottie-player class="w-full h-full" src="{{ theme.link }}/assets/flor.json" background="transparent" speed="1" style="width: 600px; height: 600px" direction="1" playMode="normal" loop autoplay>
+        </dotlottie-player>
+    </div>
+  </header>
+
     
     <header class="relative" style="background:hsla(317, 74%, 21%, 1);">
       {# {{ renderComponent('BlockPostHeader', {post: post}) }} #}
@@ -11,7 +24,7 @@
       </dotlottie-player>
       <div data-size="medium" data-align="center" >
         <h2 class="text-white">Netus ullamc elementum dolor Adipiscing aenean egestas</h2>
-      </div>
+      </div> 
     </header>
 
     <section class="container componentSpacing">
