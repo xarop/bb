@@ -5,6 +5,21 @@ flynt-component[name='BlockVideoOembed'] {
   overflow: hidden;
   padding-bottom: 2rem;
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    animation: fadeIn 1s ease-out forwards; /* Apply the animation to the h1 element */
+  }
+
   .dotlottie {
     position: absolute;
     display: flex !important;
