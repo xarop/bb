@@ -34,7 +34,7 @@ function getACFLayout(): array
             ],
             [
                 'label' => __('Button URL', 'flynt'),
-                'name' => 'buttonYrl',
+                'name' => 'buttonUrl',
                 'type' => 'url',
                 'placement' => 'top',
                 'endpoint' => 0,
