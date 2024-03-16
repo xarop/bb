@@ -21,10 +21,6 @@ flynt-component[name='BlockImageText'] {
       &[data-image-position='right'] {
         flex-direction: row-reverse;
       }
-
-      figure {
-        max-width: 300px;
-      }
     }
 
     .btn {
