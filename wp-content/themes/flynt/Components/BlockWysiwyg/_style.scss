@@ -1,0 +1,32 @@
+flynt-component[name='BlockWysiwyg'] {
+  .container {
+    position: relative;
+    &::after {
+    content:'';
+    position: absolute;
+    z-index: -1;
+    top: -2rem;
+    left: -2rem;;
+    width: 100%;
+    height: 100%;
+    background-image: url(/assets/images/mancha_BASE_1.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 230px;
+    filter: blur(3px);
+  }
+  }
+  
+
+  @media (min-width: $breakpoint-tablet) {
+    .container {
+      display: flex;
+      padding: 0 6rem;
+    }
+    h1 {
+      padding: 2rem;
+      padding-right: 8rem;
+      width: 50rem;
+    }
+  }
+}

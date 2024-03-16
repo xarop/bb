@@ -1,4 +1,25 @@
 flynt-component[name='BlockVideoOembed'] {
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  margin: 0;
+  overflow: hidden;
+  padding-bottom: 2rem;
+
+  .dotlottie {
+    position: absolute;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+
+  h1 {
+    z-index: 10;
+    position: relative;
+    padding: 2rem;
+    color: var(--color-background);
+  }
+
   .video {
     position: relative;
 
@@ -10,27 +31,6 @@ flynt-component[name='BlockVideoOembed'] {
       padding-block-end: calc(100% / 16 * 9);
       position: absolute;
       z-index: 10;
-
-      &[data-state='isLoading'] {
-        .video-loader {
-          display: block;
-        }
-
-        .video-playButton {
-          display: none;
-        }
-      }
-
-      &[data-state='isLoaded'] {
-        .video-loader,
-        .video-playButton {
-          display: none;
-        }
-
-        iframe {
-          display: block;
-        }
-      }
     }
 
     iframe {
@@ -41,9 +41,77 @@ flynt-component[name='BlockVideoOembed'] {
       inset-inline-start: 0;
       position: absolute;
     }
+
+    .modal,
+    button {
+      position: absolute;
+      z-index: 9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1;
+    }
+
+    button {
+      cursor: pointer;
+      font-size: 1rem;
+      ;
+
+      text-align: right;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1;
+
+      &::after {
+        content: '►';
+        margin: 0 1rem;
+        float: right;
+        background-color: white;
+        color: var(--color-accent);
+        width: 2rem;
+        height: 2rem;
+        border-radius: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+
+      }
+
+      &.video-closeButton {
+        top: 1rem;
+        right: 1rem;
+        bottom: auto;
+
+        &::after {
+          content: '■';
+          color: var(--color-error);
+        }
+      }
+    }
+
+
+  }
+
+
+  @media (min-width: $breakpoint-tablet) {
+    overflow: visible;
+    max-height: 550px;
+    margin-bottom: 170px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+    h1 {
+      width: 25rem;
+    }
   }
 
   @import 'Partials/figure';
-  @import 'Partials/videoPlayButton';
-  @import 'Partials/videoLoader';
+  // @import 'Partials/videoPlayButton';
+  // @import 'Partials/videoLoader';
 }

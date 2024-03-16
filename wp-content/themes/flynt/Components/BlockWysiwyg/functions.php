@@ -3,6 +3,7 @@
 namespace Flynt\Components\BlockWysiwyg;
 
 use Flynt\FieldVariables;
+use Flynt\Utils\Options;
 
 function getACFLayout(): array
 {
@@ -16,6 +17,14 @@ function getACFLayout(): array
                 'type' => 'tab',
                 'placement' => 'top',
                 'endpoint' => 0,
+            ],
+            [
+                'label' => __('Title', 'flynt'),
+                'name' => 'titleHtml',
+                'type' => 'wysiwyg',
+                'delay' => 0,
+                'media_upload' => 0,
+                'required' => 1,
             ],
             [
                 'label' => __('Text', 'flynt'),
@@ -47,3 +56,22 @@ function getACFLayout(): array
         ]
     ];
 }
+
+
+Options::addTranslatable('blockWysiwyg', [
+    [
+        'label' => __('Labels', 'flynt'),
+        'name' => 'labelsTab',
+        'type' => 'tab',
+        'placement' => 'top',
+        'endpoint' => 0
+    ],
+    [
+        'label' => '',
+        'name' => 'labels',
+        'type' => 'group',
+        'sub_fields' => [
+            
+        ],
+    ]
+]);

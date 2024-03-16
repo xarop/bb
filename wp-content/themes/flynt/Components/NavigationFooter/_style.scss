@@ -3,6 +3,11 @@ flynt-component[name='NavigationFooter'] {
   color: var(--color-background);
   background-color:  var(--color-accent);
 
+  a {
+    color: var(--color-background);
+    text-decoration: none;
+  }
+
   .container {
     padding-block: var(--component-spacing);
     text-align: center;
