@@ -1,8 +1,16 @@
 <flynt-component name="BlockImageText" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }}>
   <div class="container" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
 
+  <figure class="figure" style="background-image: url('{{ theme.link }}/assets/images/circle.svg')">
+    <img src="{{ theme.link }}/assets/images/bamboo.png" data-speed="0.2" style="top:10%; left:10%;">
+    <img src="{{ theme.link }}/assets/images/florroja.png" data-speed="0.4" style="top:20%; left:55%;">
+    <img src="{{ theme.link }}/assets/images/hoja.png" data-speed="0.6" style="top:30%; left:35%;">
+    <img src="{{ theme.link }}/assets/images/cardamomo.png" data-speed="0.8" style="top:45%; left:20%;">
+    <img src="{{ theme.link }}/assets/images/cranberry.png" data-speed="1.0" style="top:55%; left:50%;">
+  </figure>
 
-    {% if image %}
+
+    {# {% if image %}
       <figure class="figure" data-size="medium" data-align="center" style="max-width: 300px">
         {% if image.post_mime_type == 'image/svg+xml' %}
           <img
@@ -34,7 +42,10 @@
           <figcaption>{{ image.caption|e }}</figcaption>
         {% endif %}
       </figure>
-    {% endif %}
+    {% endif %} #}
+
+
+
     <div data-size="medium" data-align="center">
       <h1>{{ titleHtml }}</h1>
       {{ contentHtml|e('wp_kses_post') }}
@@ -42,3 +53,5 @@
     </div>
   </div>
 </flynt-component>
+
+
