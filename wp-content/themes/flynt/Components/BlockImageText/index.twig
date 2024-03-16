@@ -1,13 +1,13 @@
 <flynt-component name="BlockImageText" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }}>
   <div class="container" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
 
-  <figure class="figure" style="background-image: url('{{ theme.link }}/assets/images/circle.svg')">
-    <img src="{{ theme.link }}/assets/images/bamboo.png" data-speed="0.2" style="top:10%; left:10%;">
-    <img src="{{ theme.link }}/assets/images/florroja.png" data-speed="0.4" style="top:20%; left:55%;">
-    <img src="{{ theme.link }}/assets/images/hoja.png" data-speed="0.6" style="top:30%; left:35%;">
-    <img src="{{ theme.link }}/assets/images/cardamomo.png" data-speed="0.8" style="top:45%; left:20%;">
-    <img src="{{ theme.link }}/assets/images/cranberry.png" data-speed="1.0" style="top:55%; left:50%;">
-  </figure>
+<figure class="figure" style="background-image: url('{{ theme.link }}/assets/images/circle.svg')">
+  <img src="{{ theme.link }}/assets/images/bamboo.png" data-speed="0.2" style="top:5%; left:10%;">
+  <img src="{{ theme.link }}/assets/images/florroja.png" data-speed="0.4" style="top:15%; left:55%;">
+  <img src="{{ theme.link }}/assets/images/hoja.png" data-speed="0.6" style="top:20%; left:35%;">
+  <img src="{{ theme.link }}/assets/images/cardamomo.png" data-speed="0.8" style="top:45%; left:20%;">
+  <img src="{{ theme.link }}/assets/images/cranberry.png" data-speed="1.0" style="top:55%; left:50%;">
+</figure>
 
 
     {# {% if image %}
@@ -55,3 +55,17 @@
 </flynt-component>
 
 
+<script>
+  window.addEventListener('scroll', function() {
+    const speed = 0.2; // Adjust this value for the desired speed
+    const scrollY = window.scrollY;
+    const figure = document.querySelector('.figure');
+    const images = figure.querySelectorAll('img');
+    
+    images.forEach(function(img) {
+      const imgSpeed = parseFloat(img.getAttribute('data-speed'));
+      const yPos = -(scrollY * speed * imgSpeed);
+      img.style.transform = `translateY(${yPos}px)`;
+    });
+  });
+</script>
