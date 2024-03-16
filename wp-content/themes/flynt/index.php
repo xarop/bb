@@ -4,4 +4,4 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-Timber::render('templates/home.twig', $context);
+Timber::render('templates/single.twig', $context);

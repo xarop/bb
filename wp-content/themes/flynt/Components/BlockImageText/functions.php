@@ -11,9 +11,31 @@ function getACFLayout(): array
         'label' => __('Block: Image Text', 'flynt'),
         'sub_fields' => [
             [
+                'label' => __('Title', 'flynt'),
+                'name' => 'titleHtml',
+                'type' => 'wysiwyg',
+                'delay' => 0,
+                'media_upload' => 0,
+                'required' => 1,
+            ],
+            [
                 'label' => __('Content', 'flynt'),
                 'name' => 'contentTab',
                 'type' => 'tab',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ],
+            [
+                'label' => __('Button', 'flynt'),
+                'name' => 'buttonText',
+                'type' => 'text',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ],
+            [
+                'label' => __('Button URL', 'flynt'),
+                'name' => 'buttonYrl',
+                'type' => 'url',
                 'placement' => 'top',
                 'endpoint' => 0,
             ],
