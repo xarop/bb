@@ -6,6 +6,7 @@
 * Efecto parallax en scroll:
   * Solicitar diseño.
   * Utilizar libreria https://scrollmagic.io/
+  * Añadir animacion en el hover del botón y arregrar bug de estilo solo en desktop.
   
   
 # Instrucciones
