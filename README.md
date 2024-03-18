@@ -36,3 +36,15 @@ Librerias
 
 # Demo
 * https://diluvi.site
+
+
+
+# TODO:
+* Repasar estilos globales, tamaños de fuente, botones y posiciones, logo, etc.
+* Modal video:
+  * Solicitar diseño del modal de reproducir video.
+  * Detener y volver inicio  onload la pagena y al cerrar el modal (ahora se reproduce en segundo plano)
+* Efecto parallax en scroll:
+  * Solicitar diseño.
+  * Utilizar libreria https://scrollmagic.io/
+  
