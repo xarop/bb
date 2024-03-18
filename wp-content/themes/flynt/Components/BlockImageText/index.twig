@@ -1,71 +1,43 @@
 <flynt-component name="BlockImageText" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }}>
-  <div class="container" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
+  <div class="container">
 
-<figure class="figure" style="background-image: url('{{ theme.link }}/assets/images/circle.svg')">
-  <img src="{{ theme.link }}/assets/images/bamboo.png" data-speed="0.2" style="top:5%; left:10%;">
-  <img src="{{ theme.link }}/assets/images/florroja.png" data-speed="0.4" style="top:15%; left:55%;">
-  <img src="{{ theme.link }}/assets/images/hoja.png" data-speed="0.6" style="top:20%; left:35%;">
-  <img src="{{ theme.link }}/assets/images/cardamomo.png" data-speed="0.8" style="top:45%; left:20%;">
-  <img src="{{ theme.link }}/assets/images/cranberry.png" data-speed="1.0" style="top:55%; left:50%;">
-</figure>
-
-
-    {# {% if image %}
-      <figure class="figure" data-size="medium" data-align="center" style="max-width: 300px">
-        {% if image.post_mime_type == 'image/svg+xml' %}
-          <img
-            class="figure-image-svg lazyload"
-            src="{{ placeholderImage(image.width, image.height, 'rgba(125, 125, 125, 0.1)') }}"
-            width="{{ image.width }}"
-            height="{{ image.height }}"
-            data-src="{{ image.src }}"
-            alt="{{ image.alt|e }}">
-        {% else %}
-          <img
-            class="figure-image lazyload"
-            src="{{ image.src|resizeDynamic(768) }}"
-            width="{{ image.width }}"
-            height="{{ image.height }}"
-            srcset="{{ placeholderImage(image.width, image.height, 'rgba(125, 125, 125, 0.1)') }}"
-            data-srcset="
-              {{ image.src|resizeDynamic(1920) }} 1920w,
-              {{ image.src|resizeDynamic(1600) }} 1600w,
-              {{ image.src|resizeDynamic(1440) }} 1440w,
-              {{ image.src|resizeDynamic(1366) }} 1366w,
-              {{ image.src|resizeDynamic(1024) }} 1024w,
-              {{ image.src|resizeDynamic(768) }} 768w,
-              {{ image.src|resizeDynamic(640) }} 640w"
-            data-sizes="auto"
-            alt="{{ image.alt|e }}">
-        {% endif %}
-        {% if image.caption %}
-          <figcaption>{{ image.caption|e }}</figcaption>
-        {% endif %}
-      </figure>
-    {% endif %} #}
-
-
+    <figure id="parallax" class="figure" style="background-image: url('{{ theme.link }}/assets/images/circle.svg')">
+      <img class="element" src="{{ theme.link }}/assets/images/bamboo.png" data-speed="0.2" style="top:5%; left:10%;">
+      <img class="element" src="{{ theme.link }}/assets/images/florroja.png" data-speed="0.4" style="top:15%; left:55%;">
+      <img class="element" src="{{ theme.link }}/assets/images/hoja.png" data-speed="0.3" style="top:20%; left:35%;">
+      <img class="element" src="{{ theme.link }}/assets/images/cardamomo.png" data-speed="0.8" style="top:45%; left:20%;">
+      <img class="element" src="{{ theme.link }}/assets/images/cranberry.png" data-speed="1.0" style="top:55%; left:50%;">
+    </figure>
 
     <div data-size="medium" data-align="center">
-      <h1>{{ titleHtml }}</h1>
-      {{ contentHtml|e('wp_kses_post') }}
-      <a href="{{ buttonUrl }}" class="btn">{{ buttonText }}</a>
+        <h1>{{ titleHtml }}</h1>
+        {{ contentHtml|e('wp_kses_post') }}
+        <a href="{{ buttonUrl }}" class="btn">{{ buttonText }}</a>
+      </div>
     </div>
-  </div>
+
 </flynt-component>
 
 
 <script>
-  window.addEventListener('scroll', function() {
-    const speed = 0.2; // Adjust this value for the desired speed
-    const scrollY = window.scrollY;
-    const figure = document.querySelector('.figure');
-    const images = figure.querySelectorAll('img');
-    
-    images.forEach(function(img) {
-      const imgSpeed = parseFloat(img.getAttribute('data-speed'));
-      const yPos = -(scrollY * speed * imgSpeed);
-      img.style.transform = `translateY(${yPos}px)`;
-    });
-  });
+var container = document.getElementById('parallax');
+var windowHeight = window.innerHeight;
+var windowWidth = window.innerWidth;
+var scrollArea = -2500 - windowHeight;
+var elements = document.getElementsByClassName('element');
+
+window.addEventListener('scroll', function() {
+  var scrollTop = window.pageYOffset || window.scrollTop;
+  var scrollPercent = scrollTop / scrollArea || 0;
+  
+  // Loop through each element and update its position based on the scroll percentage
+  for (var i = 0; i < elements.length; i++) {
+    var element = elements[i];
+    var speed = parseFloat(element.getAttribute('data-speed'));
+    // var initialTop = parseFloat(element.style.top);
+    var initialTop = 0;
+    var finalTop = initialTop - (scrollPercent * (windowHeight * speed)); // Adjusted calculation
+    element.style.top = finalTop + 'px';
+  }
+});
 </script>
