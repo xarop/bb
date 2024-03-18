@@ -8,7 +8,8 @@
     </h1>
     <div class="video" data-size="{{ options.size }}" data-align="center">
       {% if posterImage %}
-        {% include 'Partials/_figure.twig' ignore missing with {image: posterImage} only %}
+        <img src="{{ posterImage }}">
+        {# {% include 'Partials/_figure.twig' ignore missing with {image: posterImage} only %} #}
       {% endif %}
       <div data-ref="videoPlayer" class="video-player">
         <div class="video-loader"></div>
