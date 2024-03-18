@@ -21,9 +21,6 @@ Si te encallas mucho tiempo en algún punto sigue adelante, no te preocupes, ya 
 
 Idealmente no deberías dedicar a este ejercicio más de 8 horas.
 
-Espero que la prueba sea un éxito para poder seguir avanzando y tenerte muy pronto por aquí!
-
-Saludos.
 
 # Desarrollo
 Base theme
@@ -35,5 +32,7 @@ Plugins
 Librerias
 * https://lottiefiles.com/
 
+
+
 # Demo
-## https://diluvi.site/
+* https://diluvi.site
