@@ -1,0 +1,75 @@
+flynt-component[name='BlockImageText'] {
+
+  .figure {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background-size: 15rem;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    img {
+      position: absolute;
+      max-width: 12rem;
+      width: auto;
+      height: auto;
+      max-height: 200px;
+      pointer-events: none; 
+      
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet-horizontal) {
+    background-color: var(--color-background-secondary);
+    margin: 0;
+    padding: 4rem;
+    .container {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      align-items: center;
+      display: flex;
+      gap: var(--column-gap);
+      justify-content: space-around;
+
+      > * {
+        flex-basis: 50%;
+        margin-block-start: 0;
+      }
+
+      &[data-image-position='left'] {
+        flex-direction: row;
+      }
+
+      &[data-image-position='right'] {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .btn {
+      display: table;
+      text-align: center;
+      color: var(--color-background);
+      background-color: var(--color-border);
+      border-radius: 2rem;
+      padding: .5rem 3rem;
+      margin: 4rem 0;
+      text-decoration: none;
+      &:hover {
+        background-color: var(--color-accent);
+      }
+    }
+    
+  
+    
+  }
+
+  
+
+
+
+  
+
+
+}

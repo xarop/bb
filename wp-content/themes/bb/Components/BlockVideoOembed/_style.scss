@@ -1,0 +1,133 @@
+flynt-component[name='BlockVideoOembed'] {
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  margin: 0;
+  overflow: hidden;
+  padding-bottom: 2rem;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    animation: fadeIn 1s ease-out forwards; /* Apply the animation to the h1 element */
+  }
+
+  .dotlottie {
+    position: absolute;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+
+  h1 {
+    z-index: 10;
+    position: relative;
+    padding: 2rem;
+    color: var(--color-background);
+  }
+
+  .video {
+    position: relative;
+
+    &-player {
+      block-size: 0;
+      inline-size: 100%;
+      inset-block-start: 0;
+      margin-block-start: 0;
+      padding-block-end: calc(100% / 16 * 9);
+      position: absolute;
+      z-index: 10;
+    }
+
+    iframe {
+      block-size: 100%;
+      display: none;
+      inline-size: 100%;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      position: absolute;
+    }
+
+    .modal,
+    button {
+      position: absolute;
+      z-index: 9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1;
+    }
+
+    button {
+      cursor: pointer;
+      font-size: 1rem;
+      ;
+
+      text-align: right;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1;
+
+      &::after {
+        content: '►';
+        margin: 0 1rem;
+        float: right;
+        background-color: white;
+        color: var(--color-accent);
+        width: 2rem;
+        height: 2rem;
+        border-radius: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+
+      }
+
+      &.video-closeButton {
+        top: 1rem;
+        right: 1rem;
+        bottom: auto;
+
+        &::after {
+          content: '■';
+          color: var(--color-error);
+        }
+      }
+    }
+
+
+  }
+
+
+  @media (min-width: $breakpoint-tablet) {
+    overflow: visible;
+    max-height: 550px;
+    margin-bottom: 170px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    h1 {
+      width: 25rem;
+      margin-top: 2rem;
+    }
+  }
+
+  @import 'Partials/figure';
+  // @import 'Partials/videoPlayButton';
+  // @import 'Partials/videoLoader';
+}

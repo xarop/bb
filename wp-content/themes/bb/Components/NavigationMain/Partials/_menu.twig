@@ -1,0 +1,23 @@
+<ul class="menu">
+  {% for item in items %}
+    <li class="item {{- item.current ? ' current-menu-item' }}">
+      <a class="link" href="{{ item.link|e('esc_url') }}" {{- item.is_external or item.is_target_blank ? ' target="_blank" rel="noopener noreferrer"' -}}>{{ item.title }}</a>
+    </li>
+  {% endfor %}
+    <li class="item lang-menu">
+      <a class="lang" href="#">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_2_30)">
+        <path d="M6.49998 11.9167C9.49152 11.9167 11.9166 9.49158 11.9166 6.50004C11.9166 3.5085 9.49152 1.08337 6.49998 1.08337C3.50844 1.08337 1.08331 3.5085 1.08331 6.50004C1.08331 9.49158 3.50844 11.9167 6.49998 11.9167Z" stroke="#5C0E46" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1.08331 6.5H11.9166" stroke="#5C0E46" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.49998 1.08337C7.85484 2.56665 8.6248 4.49156 8.66665 6.50004C8.6248 8.50852 7.85484 10.4334 6.49998 11.9167C5.14512 10.4334 4.37516 8.50852 4.33331 6.50004C4.37516 4.49156 5.14512 2.56665 6.49998 1.08337V1.08337Z" stroke="#5C0E46" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_2_30">
+        <rect width="13" height="13" fill="white"/>
+        </clipPath>
+        </defs>
+        </svg>
+      </a>
+    </li>
+</ul>
