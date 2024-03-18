@@ -27,7 +27,14 @@ Saludos.
 
 # Desarrollo
 Base theme
-https://github.com/flyntwp/flynt
+* https://github.com/flyntwp/flynt
 
 Demo 
-https://diluvi.site/
+* https://diluvi.site/
+
+Plugins
+* https://www.advancedcustomfields.com/
+
+Librerias
+* https://lottiefiles.com/
+
