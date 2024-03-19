@@ -1,12 +1,14 @@
 # TODO:
 - [ ] Repasar estilos globales, tamaños de fuente, botones y posiciones, logo, etc.
 - [ ] Modal vídeo:
-  - [ ] Solicitar diseño del modal de reproducir video.
+  - [ ] Solicitar diseño del modal de reproducir video
   - [ ] Detener y volver inicio  onload la página y al cerrar el modal (ahora se reproduce en segundo plano)
 - [ ] Efecto parallax en scroll:
-  - [ ] Solicitar diseño.
+  - [ ] Solicitar diseño
   - [ ] Utilizar libreria https://scrollmagic.io/
-  - [ ] Añadir animacion en el hover del botón y arregrar bug de estilo solo en desktop.
+  - [ ] Añadir animacion en el hover del botón
+  - [ ] Fix bug de color fondo en sección (solo visible en desktop)
+  - [ ] Fix bug de estilo del boton (solo visible en desktop)
   
   
 # Instrucciones
