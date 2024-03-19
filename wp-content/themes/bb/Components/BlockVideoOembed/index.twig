@@ -7,10 +7,13 @@
       {{ contentHtml|e('wp_kses_post') }}
     </h1>
     <div class="video" data-size="{{ options.size }}" data-align="center">
-      {% if posterImage %}
-        <img src="{{ posterImage }}">
-        {# {% include 'Partials/_figure.twig' ignore missing with {image: posterImage} only %} #}
+     
+     {% if posterImage %}
+        {% include 'Partials/_figure.twig' ignore missing with {image: posterImage} only %}
       {% endif %}
+
+
+
       <div data-ref="videoPlayer" class="video-player">
         <div class="video-loader"></div>
         <button data-ref="playButton" class="video-playButton" type="button" aria-label="View video">View video</button>
@@ -38,6 +41,7 @@
   playButton.onclick = function() {
     modal.style.display = "block";
     playButton.style.display = "none";
+    video.play(); // Play the video
   }
 
   closeButton.onclick = function() {
@@ -47,6 +51,12 @@
     video.currentTime = 0; // Reset the video's current time
   }
 
+  // Pause the video when modal is closed
+  modal.addEventListener('hidden.bs.modal', function () {
+    video.pause();
+  });
+
 </script>
+
 
 </flynt-component>

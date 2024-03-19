@@ -3,6 +3,7 @@ flynt-component[name='NavigationMain'] {
   block-size: var(--navigation-height);
   display: none;
   font-size: var(--font-size-body-small);
+  
 
   @media (min-width: $breakpoint-tablet-horizontal) {
     display: block;
