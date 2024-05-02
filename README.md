@@ -1,3 +1,8 @@
+# INCORPORACIÖ BYTEBERRY
+02/05/2024
+
+
+
 # TODO:
 - [ ] Repasar estilos globales, tamaños de fuente, botones y posiciones, logo, etc.
 - [ ] Modal vídeo:
